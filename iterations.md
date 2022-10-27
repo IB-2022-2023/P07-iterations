@@ -25,8 +25,62 @@ para su evaluación
 * Demuestra que es capaz de ejecutar comandos Linux en su VM
 
 ### Documentación de código. Doxygen
-XXX Intro
+https://www.cs.utah.edu/~germain/PPS/Topics/commenting.html
+https://www.freecodecamp.org/news/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83/
 
+La documentación de una aplicación es cualquier texto que describa el programa a los usuarios del mismo.
+El usuario puede ser desde un programador hasta un usuario final del programa.
+Hay diferentes tipos de documentación: especificación de requisitos, manual de usuario, documento de diseño,
+documentación técnica, ...
+En esta asignatura nos centraremos en la documentación del código, que es parte de la documentación técnica.
+
+Hay diversos motivos por los que escribir documentación es importante:
+* La documentación posibilita el seguimiento de todas las partes de un software o programa
+* Facilita el mantenimiento de la aplicación. Durante el ciclo de vida de una aplicación es muy frecuente que
+  haya que introducir cambios en la misma.
+* Posibilita que programadores que no sean el desarrollador pueden entender todos los aspectos del programa
+* Mejora la calidad general del software
+* Ayuda a la formación de otros programadores
+* Garantiza la descentralización del conocimiento, reduciendo los costes y el esfuerzo si los desarrolladores abandonan el proyecto de forma imprevista 
+
+Todos los programas deben estar comentados de modo que describan fácilmente la finalidad del código y cualquier 
+algoritmo utilizado para lograr el propósito. 
+Un usuario debería ser capaz de utilizar un programa (o función) previamente escrito sin tener que estudiar 
+en detalle el código, simplemente leyendo los comentarios.
+
+Los comentarios son el "arte" de describir en lenguaje natural (inglés, español, etc.) lo que el programa
+hace.
+Lo mejor es comentar **antes** de escribir el código del programa.
+
+Los comentarios son líneas de texto especialmente marcadas en el programa que no se evalúan. 
+Tal como se ha estudiado, los comentarios son eliminados por el preprocesador: el programa que el compilador
+evalúa (compila) carece de comentarios. Dicho de otro modo: los comentarios se escriben para ser leídos por
+personas, no para el compilador.
+Tal como se ha estudiado, hay dos formas sintácticas de comentar. 
+La primera se llama comentario de una sola línea y sólo se aplica a una única línea en el código fuente. 
+La segunda se denomina comentario de bloque y suele referirse a un párrafo de texto (como los comentarios
+"prólogo" que se colocan al principio de cualquier fichero con código fuente).
+Un comentario de bloque tiene un símbolo de inicio y un símbolo de fin y todo lo que hay entre ellos es ignorado por compilador.
+
+#### Dónde comentar
+Los comentarios deben aparecer en los siguientes puntos de un programa:
+* Al comienzo de cualquier fichero de código.
+A estos se les llama "Comentarios de cabecera". 
+Debe incluir toda la información definitoria sobre quién escribió el código, y por qué, y cuándo, y qué debe hacer. 
+* Previo a cada función del programa.
+Se denomina cabecera de la función y proporciona información sobre el propósito de la función en cuestión.
+Si sólo hay una función en un fichero, los comentarios de la cabecera de la función y de la cabecera del fichero
+deben fusionarse en un único comentario. 
+* En la línea.
+Cualquier código "complicado" en el que no sea inmediatamente obvio lo que está tratando de lograr, debería tener 
+comentarios justo encima o en la misma línea que él.
+
+#### Cómo no comentar
+Los comentarios deben ser descripciones útiles de lo que hace el programa. 
+No deben repetir algo que es "obvio" leyendo el código. 
+Utilizando identificadores adecuados, la mayor parte de un programa no precisa comentarios adicionales.
+
+### Doxygen
 [Doxygen](https://en.wikipedia.org/wiki/Doxygen) es una herramienta de código abierto que permite generar documentación de referencia para proyectos de desarrollo software. 
 Una ventaja de Doxygen es que la documentación está escrita en el propio código fuente de los programas, y por lo tanto es relativamente fácil de mantener actualizada. 
 Doxygen puede hacer referencias cruzadas entre la documentación y el código, de modo que el lector de un documento puede referirse fácilmente al código fuente.
