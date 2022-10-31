@@ -143,7 +143,7 @@ Se utilizarán comentarios de tipo JavaDoc para comentarios de bloque:
 
 ```
 /**
- * ... text ...
+ * ... text comment ...
  */
 ```
 [JavaDoc](https://en.wikipedia.org/wiki/Javadoc) es otro sistema de documentación ideado para Java y que también es muy popular. 
