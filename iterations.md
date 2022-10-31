@@ -234,3 +234,62 @@ Su código ha de cumplir adicionalmente con los requisitos de modularidad, forma
 Programa que convierta de decimal a binario
 Programa de binario a decimal
 
+1. Escriba un programa `leap_year.cc` que indique si un año es o no bisiesto. 
+Un año bisiesto tiene 366 días. 
+Después de la reforma gregoriana, los años bisiestos son aquellos múltiplos de cuatro que no terminan con dos ceros, 
+y también los años que terminan con dos ceros tales que, después de eliminar estos dos ceros, son divisibles por cuatro. 
+Así, 1800 y 1900, a pesar de ser múltiplos de cuatro, no fueron años bisiestos; por el contrario, 2000 fue un año bisiesto. 
+```
+Public test cases
+Input           Output
+1999           NO
+1968          YES
+2000          YES
+1800           NO
+```
+
+2. Escriba un programa que lea un número natural e imprima como salida la suma de los dígitos del número en cuestión. Por ejemplo, si el número introducido fuera el 2021, la salida debería ser 5
+```
+Public test cases
+Input           Output
+2022              6
+1492             16
+0                 0
+```
+
+3. Desarrolle un programa que imprima los N primeros términos de la 
+[Serie de Fibonacci](https://en.wikipedia.org/wiki/Fibonacci_number). 
+Los primeros términos de la serie son: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, ...
+```
+Public test cases
+Input           Output
+5                 0 1 1 2 3
+9                 0 1 1 2 3 5 8 13 21
+1                 0
+```
+
+4. La secuencia de Collatz de un número entero se construye de la siguiente forma:
+* si el número es par, se lo divide por dos;
+* si es impar, se le multiplica tres y se le suma uno;
+* la sucesión termina al llegar a uno.
+La 
+[conjetura de Collatz](https://en.wikipedia.org/wiki/Collatz_conjecture)
+afirma que, al partir desde cualquier número, la secuencia siempre llegará a 1. 
+A pesar de ser una afirmación a simple vista muy simple, no se ha podido demostrar si es cierta o no (es por
+ello que se le llama *conjetura*).
+Usando ordenadores, se ha verificado que la sucesión efectivamente llega a 1 partiendo desde cualquier número 
+natural menor que 258.
+Desarrolle un programa que calcule la secuencia de Collatz de un número entero:
+```
+Public test cases
+Input           Output
+18              18 9 28 14 7 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1
+19              19 58 29 88 44 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1
+20               20 10 5 16 8 4 2 1
+```
+
+
+
+
+
+
