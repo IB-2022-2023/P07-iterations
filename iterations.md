@@ -168,7 +168,7 @@ o
 ```
 permitidas en Doxygen.
 
-Así el bloque de comentarios que debe preceder a cualquier función (o método) tendrá una apariencia similar a esta:
+Así el bloque de comentarios que debe preceder a cualquier función (o método) debiera tener una apariencia similar a esta:
 ```
 /**
  * Sum numbers in a vector.
@@ -189,15 +189,16 @@ El siguiente es un ejemplo (plantilla) de comentario de bloque que debería incl
   * Universidad de La Laguna
   * Escuela Superior de Ingeniería y Tecnología
   * Grado en Ingeniería Informática
-  * Informática Básica
+  * Informática Básica 2022-2023
   *
-  * @author F. de Sande fsande@ull.es
-  * @date 01 Dic 2021
+  * @file integer_division_and_reminder.cc
+  * @author Albert Einstein aeinstein@ull.edu.es
+  * @date Oct 12 2022
   * @brief El programa calcula la suma de todos los términos de valor par de la serie
   *        de Fibonacci que sean menores que un valor dado.
   *        Cada nuevo término de la serie se genera sumando los dos anteriores.
   *        Comenzando con 0 y 1, los primeros 10 términos serán: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
-  * @bug No hay bugs conocidos
+  * @bug There are no known bugs
   * @see https://www.cs.cmu.edu/~410/doc/doxygen.html
   */
 ```
@@ -205,7 +206,10 @@ Todo fichero debiera contener (etiqueta `@brief`) una breve descripción del con
 Si fuera necesario se incluirá a continuación una descripción más detallada.
 Obviamente el comentario específico debiera particularizarse para cada caso concreto.
 
-Por otra parte, estudie atentamente todo lo que se indica en el epígrafe [Comments](https://google.github.io/styleguide/cppguide.html#Comments) de la Guía de Estilo de Google y ponga en práctica todo lo que en ella se propone, usando el formato Doxygen para todos los comentarios que introduzca en su código fuente.
+Por otra parte, estudie atentamente todo lo que se indica en el epígrafe 
+[Comments](https://google.github.io/styleguide/cppguide.html#Comments) 
+de la Guía de Estilo de Google y ponga en práctica todo lo que en ella se propone, usando el formato Doxygen 
+para todos los comentarios que introduzca en su código fuente.
 
 ### Material de estudio complementario
 Estudie del
@@ -225,7 +229,8 @@ independiente para cada programa y que ha de incluir en el correspondiente direc
 Su código ha de cumplir adicionalmente con los requisitos de modularidad, formato y estilo.
 
 1. [P98960](https://jutge.org/problems/P98960_en) Uppercase and lowercase letters
-2. [P90615](https://jutge.org/problems/P90615_en) Maximum of three integer numbers
-3. [P34279](https://jutge.org/problems/P34279_en) Add one second
-4. [P97156](https://jutge.org/problems/P97156_en) Numbers in an interval
-5. [P59539](https://jutge.org/problems/P59539_en) Harmonic numbers (1)
+
+
+Programa que convierta de decimal a binario
+Programa de binario a decimal
+
