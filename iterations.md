@@ -256,15 +256,15 @@ en el sentido de que la función *main()* es una mera *orquestadora* de las func
 *main()* pasa a esas funciones los parámetros necesarios para su funcionamiento y las diferentes funciones
 devuelven a *main()* el valor que calculan (si fuera el caso).
 
-Incluya en todos sus programas sendas funciones:
+Incluya en todos sus programas sendas funciones cuya declaración sería:
 ```
 void PrintProgramPurpose();
 bool CheckCorrectParameters(const int argc, char *argv[], const int kCorrectNumber);
 ```
-La primera de ella se invocará al comienzo de la ejecución del programa para imprimir un mensaje explicativo de
-la finalidad el programa en cuestión.
+La primera de ella se invocará al comienzo de la ejecución para imprimir un mensaje explicativo de
+la finalidad del programa en cuestión.
 La función *CheckCorrectParameters()* devolverá `true` si al programa se le han pasado el número adecuado de
-parámetros por línea de comandos y `false` en caso contrario.
+parámetros por línea de comandos (3 en el ejemplo anterior) y `false` en caso contrario.
 Estude el programa 
 [check-correct-parameters.cc](https://github.com/IB-2022-2023/IB-class-code-examples/blob/master/Functions/check-correct-parameters.cc)
 de los ejemplos de código de las clases de teoría que ilustra el uso de estas dos funciones.
