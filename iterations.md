@@ -159,6 +159,7 @@ y finalizar con
 ```
 Los comentarios de una única línea deben comenzar con `///`.
 Por consistencia no use las opciones 
+
 ```
 /*!
 ```
@@ -218,37 +219,13 @@ en la asignatura los siguientes apartados:
 XXX
 
 ### Ejercicios
-* Escriba programas que solucionen los siguientes problemas y evalúe su solución utilizando Jutge.
 * Al realizar los ejercicios cree dentro de su repositorio de esta práctica un directorio diferente
 para cada uno de los ejercicios.
-Asigne a cada uno de esos directorios nombres significativos. Por ejemplo `P34279_add-one-second` para el
-tercer ejercicio.
+Asigne a cada uno de esos directorios nombres significativos. 
 * Automatice la compilación del programa correspondiente a cada ejercicio con un fichero `Makefile`
 independiente para cada programa y que ha de incluir en el correspondiente directorio.
-* Recuerde que Jutge solo evalúa la corrección de su programa desde un punto de vista de su correcto funcionamiento.
-Su código ha de cumplir adicionalmente con los requisitos de modularidad, formato y estilo.
 
-1. [P98960](https://jutge.org/problems/P98960_en) Uppercase and lowercase letters
-
-
-Programa que convierta de decimal a binario
-Programa de binario a decimal
-
-1. Escriba un programa `leap_year.cc` que indique si un año es o no bisiesto. 
-Un año bisiesto tiene 366 días. 
-Después de la reforma gregoriana, los años bisiestos son aquellos múltiplos de cuatro que no terminan con dos ceros, 
-y también los años que terminan con dos ceros tales que, después de eliminar estos dos ceros, son divisibles por cuatro. 
-Así, 1800 y 1900, a pesar de ser múltiplos de cuatro, no fueron años bisiestos; por el contrario, 2000 fue un año bisiesto. 
-```
-Public test cases
-Input           Output
-1999           NO
-1968          YES
-2000          YES
-1800           NO
-```
-
-2. Escriba un programa que lea un número natural e imprima como salida la suma de los dígitos del número en cuestión. Por ejemplo, si el número introducido fuera el 2021, la salida debería ser 5
+1. Escriba un programa que lea un número natural e imprima como salida la suma de los dígitos del número en cuestión. 
 ```
 Public test cases
 Input           Output
@@ -257,7 +234,7 @@ Input           Output
 0                 0
 ```
 
-3. Desarrolle un programa que imprima los N primeros términos de la 
+2. Desarrolle un programa que imprima los N primeros términos de la 
 [Serie de Fibonacci](https://en.wikipedia.org/wiki/Fibonacci_number). 
 Los primeros términos de la serie son: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, ...
 ```
@@ -268,28 +245,47 @@ Input           Output
 1                 0
 ```
 
-4. La secuencia de Collatz de un número entero se construye de la siguiente forma:
-* si el número es par, se lo divide por dos;
-* si es impar, se le multiplica tres y se le suma uno;
-* la sucesión termina al llegar a uno.
-La 
-[conjetura de Collatz](https://en.wikipedia.org/wiki/Collatz_conjecture)
-afirma que, al partir desde cualquier número, la secuencia siempre llegará a 1. 
-A pesar de ser una afirmación a simple vista muy simple, no se ha podido demostrar si es cierta o no (es por
-ello que se le llama *conjetura*).
-Usando ordenadores, se ha verificado que la sucesión efectivamente llega a 1 partiendo desde cualquier número 
-natural menor que 258.
-Desarrolle un programa que calcule la secuencia de Collatz de un número entero:
+3. Estudie en el tutorial Learn C++ los epígrafes
+[Numeral systems (decimal, binary, hexadecimal, and
+octal)](https://www.learncpp.com/cpp-tutorial/numeral-systems-decimal-binary-hexadecimal-and-octal/)
+y
+[Converting between binary and
+decimal](https://www.learncpp.com/cpp-tutorial/converting-between-binary-and-decimal/).
+
+Escriba un programa `binary-to-decimal.cc` que convierta números binarios en decimal.
+No utilice las clases `std::string`, `std::vector` o `std::array`.
+Si la entrada no fuera un número binario, el programa debe imprimir en pantalla un mensaje de error y
+finalizar la ejecución.
 ```
 Public test cases
 Input           Output
-18              18 9 28 14 7 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1
-19              19 58 29 88 44 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1
-20               20 10 5 16 8 4 2 1
+1111              15
+1011110           94
+1018110        Wrong Input
+10010111         151
 ```
 
+4. Escriba un programa `decimal-to-binary.cc` que convierta números de decimal a binario.
+No utilice las clases `std::string`, `std::vector` o `std::array`.
+```
+Public test cases
+Input           Output
+15              1111
+94              1011110
+151             10010111
+```
 
-
-
-
-
+5. Escriba un programa `leap-year.cc` que indique si un año es o no 
+[bisiesto](https://en.wikipedia.org/wiki/Leap_year)
+Un año bisiesto tiene 366 días. 
+Después de la reforma gregoriana, los años bisiestos son aquellos múltiplos de cuatro que no terminan con dos ceros, 
+y también los años que terminan con dos ceros tales que, después de eliminar estos dos ceros, son divisibles por cuatro. 
+Así, 1800 y 1900, a pesar de ser múltiplos de cuatro, no fueron años bisiestos; por el contrario, 2000 fue un año bisiesto. 
+```
+Public test cases
+Input        Output
+1999           NO
+1968          YES
+2000          YES
+1800           NO
+```
