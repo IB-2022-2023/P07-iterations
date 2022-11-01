@@ -111,14 +111,14 @@ Estos paquetes son necesarios para compilar ficheros en formato [LaTeX](https://
 Más adelante en este documento se justifica la necesidad de los programas que suministran estos paquetes.
 
 En el [manual de Doxygen](https://www.doxygen.nl/manual/starting.html) se indica cómo comenzar a trabajar con la herramienta.
-Si, ubicados en un directorio de trabajo, se invoca `doxygen`:
+Si, ubicados en un directorio de trabajo, se invoca:
 ```
 doxygen -g <config-file>
 ```
 la herramienta creará un fichero de configuración.
 Si no se le pasa el nombre del fichero (*config-file*) como parámetro, creará un fichero con nombre `Doxyfile` preconfigurado para su uso.
 En el directorio de trabajo de esta práctica (`src`) se encuentra un fichero `Doxyfile` ya listo para usarse con proyectos de C++.
-Se ha incluído asimismo el código fuente de un programa para ilustrar con el mismo el uso de documentación con Doxygen.
+Se ha incluído asimismo en ese directorio el código fuente de un programa para ilustrar con el mismo el uso de documentación con Doxygen.
 Si revisa el fichero `Doxyfile` (es un fichero de texto) verá un conjunto de opciones que el programa permite.
 Cada opción va precedida de una explicación de su finalidad y funcionamiento, de modo que puede probar a modificar algunas de ellas si lo desea.
 En [esta página](https://www.doxygen.nl/manual/config.html) puede consultarse la finalidad y funcionamiento de cada una de las etiquetas (tags) que se usan en el fichero de configuración de Doxygen.
@@ -134,6 +134,8 @@ El directorio donde Doxygen genera su salida se especifica con la etiqueta `OUTP
 Con la configuración suministrada se generan 2 subdirectorios dentro de `doc`: `html` y `latex`.
 Si se coloca en el directorio `doc/latex/` y ejecuta `make` el sistema "compila" el código LaTeX y 
 genera un fichero `refman.pdf` que contiene la documentación generada.
+Observe en este caso el uso de `make` con un fichero `Makefile` no para compilar un programa sino para generar
+un fichero `pdf` a partir del código (texto) LaTeX.
 Si trabaja en su máquina virtual, traiga el fichero `refman.pdf` hacia su máquina local y visualice su
 contenido.
 
