@@ -4,13 +4,19 @@
 
 ### Objetivos
 Los objetivos de esta práctica son que el alumnado:
-* 
+* Conozca los fundamentos de la documentación de código
+* Conozca la herramienta Doxygen, las etiquetas definidas en JSDoc y sepa cómo utilizarlas para documentar su
+código
+* Comience a utilizar funciones en sus programas y modularice sus programas en diferentes funciones
 
 ### Rúbrica de evaluacion de esta práctica
 Se señalan a continuación los aspectos más relevantes (la lista no es exhaustiva) que se tendrán en cuenta a la hora de evaluar esta práctica.
 Se comprobará que el alumnado:
 * Es capaz de escribir programas simples en C++ que resuelvan problemas de
   complejidad similar a los que se han propuesto para esta práctica
+* Hace que sus programas se estructuren en torno a diferentes funciones (modularidad)
+* Utiliza en todos sus programas comentarios adecuados en el formato requerido por
+[Doxygen](https://www.doxygen.nl/index.html)
 * Ha automatizado la compilación de sus programas usando un fichero `Makefile`
   para cada uno de los programas que desarrolle 
 * Acredita que todas las prácticas realizadas hasta la fecha se encuentran alojadas en repositorios
@@ -85,8 +91,8 @@ Una ventaja de Doxygen es que la documentación está escrita en el propio códi
 Doxygen puede hacer referencias cruzadas entre la documentación y el código, de modo que el lector de un documento puede referirse fácilmente al código fuente.
 La herramienta extrae la documentación de los comentarios presentes en los ficheros de código fuente y puede generar la salida en diferentes formatos entre los cuales están HTML, PDF, LaTeX o páginas `man` de Unix.
 
-En *Informática Básica* no se propone un uso exhaustivo de Doxygen pero sí se promueve que la
-documentación de los programas desarrollados se realice en el formato reconocido por Doxygen, que se ha
+En *Informática Básica* no se propone un uso exhaustivo de Doxygen pero **sí se requiere que la
+documentación de los programas desarrollados se realice en el formato reconocido por Doxygen**, que se ha
 convertido en un estándar de facto.
 
 Comience por instalar Doxygen en su máquina virtual de la asignatura:
@@ -204,12 +210,12 @@ Todo fichero debiera contener (etiqueta `@brief`) una breve descripción del con
 Si fuera necesario se incluirá a continuación una descripción más detallada.
 Obviamente el comentario específico debiera particularizarse para cada caso concreto.
 
-Por otra parte, estudie atentamente todo lo que se indica en el epígrafe 
-[Comments](https://google.github.io/styleguide/cppguide.html#Comments) 
-de la Guía de Estilo de Google y ponga en práctica todo lo que en ella se propone, usando el formato Doxygen 
-para todos los comentarios que introduzca en su código fuente.
-
 ### Material de estudio complementario
+Estudie todo lo que se indica en el epígrafe 
+[Comments](https://google.github.io/styleguide/cppguide.html#Comments) 
+de la Guía de Estilo de Google y ponga en práctica todo lo que en ella se propone, usando el formato Doxygen y
+etiquetas JSDoc para todos los comentarios que introduzca en su código fuente.
+
 Estudie del
 [tutorial de referencia](https://www.learncpp.com/)
 en la asignatura los siguientes apartados:
@@ -220,6 +226,11 @@ en la asignatura los siguientes apartados:
 * [Command line arguments](https://www.learncpp.com/cpp-tutorial/command-line-arguments/)
 
 ### Diseño de los programas
+Recuerde las que se han estudiado como *Buenas Prácticas* a la hora de diseñar sus funciones:
+* El código deberá organizarse en diferentes funciones 
+* Cada función deberá realizar una única tarea y hacerlo correctamente 
+* El identificador de una función debe reflejar claramente lo que la función hace 
+
 Tal como se indica en 
 [How to design your first programs](https://www.learncpp.com/cpp-tutorial/how-to-design-your-first-programs/)
 su código debiera estar organizado en torno a funciones que se invocan desde la función *main()*.
@@ -241,7 +252,7 @@ int main(int argc, char* argv[]) {
 ```
 en el sentido de que la función *main()* es una mera *orquestadora* de las funciones que componen el programa.
 *main()* pasa a esas funciones los parámetros necesarios para su funcionamiento y las diferentes funciones
-devuelven a *main()* el valor calculado por la función.
+devuelven a *main()* el valor que calculan (si fuera el caso).
 
 Incluya en todos sus programas sendas funciones:
 ```
