@@ -25,9 +25,6 @@ para su evaluación
 * Demuestra que es capaz de ejecutar comandos Linux en su VM
 
 ### Documentación de código 
-https://www.cs.utah.edu/~germain/PPS/Topics/commenting.html
-https://www.freecodecamp.org/news/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83/
-
 La documentación de una aplicación es cualquier texto que describa el programa a los usuarios del mismo.
 El usuario puede ser desde un programador hasta un usuario final del programa.
 Hay diferentes tipos de documentación: especificación de requisitos, manual de usuario, documento de diseño,
@@ -71,7 +68,7 @@ Debe incluir toda la información definitoria sobre quién escribió el código,
 Se denomina cabecera de la función y proporciona información sobre el propósito de la función en cuestión.
 Si sólo hay una función en un fichero, los comentarios de la cabecera de la función y de la cabecera del fichero
 deben fusionarse en un único comentario. 
-* En la línea.
+* Comentarios de línea.
 Cualquier código "complicado" en el que no sea inmediatamente obvio lo que está tratando de lograr, debería tener 
 comentarios justo encima o en la misma línea que él.
 
@@ -110,7 +107,6 @@ Si, ubicados en un directorio de trabajo, se invoca `doxygen`:
 ```
 doxygen -g <config-file>
 ```
-
 la herramienta creará un fichero de configuración.
 Si no se le pasa el nombre del fichero (*config-file*) como parámetro, creará un fichero con nombre `Doxyfile` preconfigurado para su uso.
 En el directorio de trabajo de esta práctica (`src`) se encuentra un fichero `Doxyfile` ya listo para usarse con proyectos de C++.
@@ -123,7 +119,6 @@ Para generar la documentación de su aplicación, colóquese en el directorio de
 ```
 doxygen Doxyfile
 ```
-
 Con el fichero `Doxyfile` que se suministra, la herramienta creará un subdirectorio `doc` en el directorio raíz de su proyecto en el que alojará toda la documentación generada.
 El directorio donde Doxygen genera su salida se especifica con la etiqueta `OUTPUT_DIRECTORY` (línea `61` del fichero `Doxyfile` suministrado).
 Con la configuración suministrada se generan 2 subdirectorios dentro de `doc`: `html` y `latex`.
@@ -140,7 +135,6 @@ La sección [Documenting the code](https://www.doxygen.nl/manual/config.html) de
 
 La guía [Documenting C++ Code](https://developer.lsst.io/cpp/api-docs.html) de documentación de código del proyecto LLST es la referencia que se adoptará en la asignatura para documentar el código de los programas que se desarrollen.
 Se utilizarán comentarios de tipo JavaDoc para comentarios de bloque:
-
 ```
 /**
  * ... text comment ...
@@ -169,20 +163,24 @@ o
 ```
 permitidas en Doxygen.
 
-Así el bloque de comentarios que debe preceder a cualquier función (o método) debiera tener una apariencia similar a esta:
+Así el 
+[bloque de comentarios](https://jsdoc.app/tags-description.html)
+que debe preceder a cualquier función (o método) debiera tener una apariencia similar a esta:
 ```
 /**
- * Sum numbers in a vector.
+ * Sum numbers in a vector
  *
- * @param values Container whose values are summed.
- * @return sum of `values`, or 0.0 if `values` is empty.
+ * @param values Container whose values are summed
+ * @return sum of `values`, or 0.0 if `values` is empty
  */
-double sum(std::vector<double>& const values) {
+double SumValues(const std::vector<double>& values) {
   ...
 }
 ```
 En el ejemplo anterior `@param` y `@return` son etiquetas de tipo Javadoc.
-En [Overview of supported JavaDoc style tags](http://www.time2help.com/doc/online_help/idh_java_doc_tag_support.htm) pueden consultarse este tipo de etiquetas.
+En 
+[Overview of supported JavaDoc style tags](http://www.time2help.com/doc/online_help/idh_java_doc_tag_support.htm) 
+pueden consultarse este tipo de etiquetas.
 
 El siguiente es un ejemplo (plantilla) de comentario de bloque que debería incluirse al comienzo de todos los ficheros (`*.cc`, `*.h`) de un proyecto de programación en el ámbito de esta asignatura:
 ```
@@ -192,7 +190,6 @@ El siguiente es un ejemplo (plantilla) de comentario de bloque que debería incl
   * Grado en Ingeniería Informática
   * Informática Básica 2022-2023
   *
-  * @file integer_division_and_reminder.cc
   * @author Albert Einstein aeinstein@ull.edu.es
   * @date Oct 12 2022
   * @brief El programa calcula la suma de todos los términos de valor par de la serie
@@ -216,15 +213,37 @@ para todos los comentarios que introduzca en su código fuente.
 Estudie del
 [tutorial de referencia](https://www.learncpp.com/)
 en la asignatura los siguientes apartados:
-XXX
+* [Comments](https://www.learncpp.com/cpp-tutorial/comments/)
+* El capítulo 2
+[Basics: Functions and Files](https://www.learncpp.com/cpp-tutorial/introduction-to-functions/)
+(completo)
+* [Command line arguments](https://www.learncpp.com/cpp-tutorial/command-line-arguments/)
 
-### Ejercicios
-* Al realizar los ejercicios cree dentro de su repositorio de esta práctica un directorio diferente
-para cada uno de los ejercicios.
-Asigne a cada uno de esos directorios nombres significativos. 
-* Automatice la compilación del programa correspondiente a cada ejercicio con un fichero `Makefile`
-independiente para cada programa e inclúyalo en el correspondiente directorio.
-* Incluya en todos sus programas sendas funciones:
+### Diseño de los programas
+Tal como se indica en 
+[How to design your first programs](https://www.learncpp.com/cpp-tutorial/how-to-design-your-first-programs/)
+su código debiera estar organizado en torno a funciones que se invocan desde la función *main()*.
+Así la apariencia habitual de la función principal de cualquier programa debiera ser algo similar a:
+```
+int main(int argc, char* argv[]) {
+  PrintProgramPurpose();
+  if (!CheckCorrectParameters(argc, argv, 3)) {
+    return 1;
+  }
+  GetUserInput();
+  GetMathematicalOperation();
+  GetUserInput();
+  CalculateResult();
+  PrintResult();
+
+  return 0;
+}
+```
+en el sentido de que la función *main()* es una mera *orquestadora* de las funciones que componen el programa.
+*main()* pasa a esas funciones los parámetros necesarios para su funcionamiento y las diferentes funciones
+devuelven a *main()* el valor calculado por la función.
+
+Incluya en todos sus programas sendas funciones:
 ```
 void PrintProgramPurpose();
 bool CheckCorrectParameters(const int argc, char *argv[], const int kCorrectNumber);
@@ -236,6 +255,13 @@ parámetros por línea de comandos y `false` en caso contrario.
 Estude el programa 
 [check-correct-parameters.cc](https://github.com/IB-2022-2023/IB-class-code-examples/blob/master/Functions/check-correct-parameters.cc)
 de los ejemplos de código de las clases de teoría que ilustra el uso de estas dos funciones.
+
+### Ejercicios
+* Al realizar los ejercicios cree dentro de su repositorio de esta práctica un directorio diferente
+para cada uno de los ejercicios.
+Asigne a cada uno de esos directorios nombres significativos. 
+* Automatice la compilación del programa correspondiente a cada ejercicio con un fichero `Makefile`
+independiente para cada programa e inclúyalo en el correspondiente directorio.
 
 1. Escriba un programa que lea un número natural e imprima como salida la suma de los dígitos del número en cuestión. 
 ```
