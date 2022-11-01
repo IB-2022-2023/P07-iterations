@@ -223,7 +223,19 @@ XXX
 para cada uno de los ejercicios.
 Asigne a cada uno de esos directorios nombres significativos. 
 * Automatice la compilación del programa correspondiente a cada ejercicio con un fichero `Makefile`
-independiente para cada programa y que ha de incluir en el correspondiente directorio.
+independiente para cada programa e inclúyalo en el correspondiente directorio.
+* Incluya en todos sus programas sendas funciones:
+```
+void PrintProgramPurpose();
+bool CheckCorrectParameters(const int argc, char *argv[], const int kCorrectNumber);
+```
+La primera de ella se invocará al comienzo de la ejecución del programa para imprimir un mensaje explicativo de
+la finalidad el programa en cuestión.
+La función *CheckCorrectParameters()* devolverá `true` si al programa se le han pasado el número adecuado de
+parámetros por línea de comandos y `false` en caso contrario.
+Estude el programa 
+[check-correct-parameters.cc](https://github.com/IB-2022-2023/IB-class-code-examples/blob/master/Functions/check-correct-parameters.cc)
+de los ejemplos de código de las clases de teoría que ilustra el uso de estas dos funciones.
 
 1. Escriba un programa que lea un número natural e imprima como salida la suma de los dígitos del número en cuestión. 
 ```
@@ -253,7 +265,7 @@ y
 decimal](https://www.learncpp.com/cpp-tutorial/converting-between-binary-and-decimal/).
 
 Escriba un programa `binary-to-decimal.cc` que convierta números binarios en decimal.
-No utilice las clases `std::string`, `std::vector` o `std::array`.
+No utilice los tipos `std::string`, `std::vector` o `std::array`.
 Si la entrada no fuera un número binario, el programa debe imprimir en pantalla un mensaje de error y
 finalizar la ejecución.
 ```
@@ -266,7 +278,7 @@ Input           Output
 ```
 
 4. Escriba un programa `decimal-to-binary.cc` que convierta números de decimal a binario.
-No utilice las clases `std::string`, `std::vector` o `std::array`.
+No utilice los tipos `std::string`, `std::vector` o `std::array`.
 ```
 Public test cases
 Input           Output
@@ -281,6 +293,7 @@ Un año bisiesto tiene 366 días.
 Después de la reforma gregoriana, los años bisiestos son aquellos múltiplos de cuatro que no terminan con dos ceros, 
 y también los años que terminan con dos ceros tales que, después de eliminar estos dos ceros, son divisibles por cuatro. 
 Así, 1800 y 1900, a pesar de ser múltiplos de cuatro, no fueron años bisiestos; por el contrario, 2000 fue un año bisiesto. 
+
 ```
 Public test cases
 Input        Output
@@ -289,3 +302,10 @@ Input        Output
 2000          YES
 1800           NO
 ```
+
+Tenga en cuenta que en la evaluación de las prácticas de *Informática Básica* se utlizarán ejercicios de Jutge, 
+de modo que resolver problemas en esa plataforma mejorará sus capacidades como programadora. 
+Realice todos los ejercicios del curso Informática Básica de Jutge que sea capaz. 
+
+Recuerde siempre que Jutge solo evalúa la corrección de su programa desde un punto de vista de su correcto funcionamiento. 
+Su código ha de cumplir adicionalmente con los requisitos de modularidad, formato y estilo.
