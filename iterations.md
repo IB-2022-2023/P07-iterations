@@ -4,17 +4,19 @@
 
 ### Objetivos
 Los objetivos de esta práctica son que el alumnado:
+* Sea capaz de resolver problemas sencillos en C++ usando todos los conocimientos adquiridos hasta ahora, 
+y en particular haciendo uso de sentencias iterativas
+* Comience a utilizar funciones en sus programas y modularice sus programas en diferentes funciones
 * Conozca los fundamentos de la documentación de código
 * Conozca la herramienta Doxygen, las etiquetas definidas en JSDoc y sepa cómo utilizarlas para documentar su
 código
-* Comience a utilizar funciones en sus programas y modularice sus programas en diferentes funciones
 
 ### Rúbrica de evaluacion de esta práctica
 Se señalan a continuación los aspectos más relevantes (la lista no es exhaustiva) que se tendrán en cuenta a la hora de evaluar esta práctica.
 Se comprobará que el alumnado:
 * Es capaz de escribir programas simples en C++ que resuelvan problemas de
   complejidad similar a los que se han propuesto para esta práctica
-* Hace que sus programas se estructuren en torno a diferentes funciones (modularidad)
+* Hace que sus programas se estructuren en torno a diferentes funciones (sean modulares)
 * Utiliza en todos sus programas comentarios adecuados en el formato requerido por
 [Doxygen](https://www.doxygen.nl/index.html)
 * Ha automatizado la compilación de sus programas usando un fichero `Makefile`
@@ -189,7 +191,7 @@ En
 pueden consultarse este tipo de etiquetas.
 
 El siguiente es un ejemplo (plantilla) de comentario de bloque que debería incluirse al comienzo de todos los ficheros (`*.cc`, `*.h`) de un proyecto de programación en el ámbito de esta asignatura:
-```
+``` .cpp
 /**
   * Universidad de La Laguna
   * Escuela Superior de Ingeniería y Tecnología
@@ -214,7 +216,7 @@ Obviamente el comentario específico debiera particularizarse para cada caso con
 Estudie todo lo que se indica en el epígrafe 
 [Comments](https://google.github.io/styleguide/cppguide.html#Comments) 
 de la Guía de Estilo de Google y ponga en práctica todo lo que en ella se propone, usando el formato Doxygen y
-etiquetas JSDoc para todos los comentarios que introduzca en su código fuente.
+etiquetas JSDoc para todos los comentarios de su código fuente.
 
 Estudie del
 [tutorial de referencia](https://www.learncpp.com/)
@@ -235,7 +237,7 @@ Tal como se indica en
 [How to design your first programs](https://www.learncpp.com/cpp-tutorial/how-to-design-your-first-programs/)
 su código debiera estar organizado en torno a funciones que se invocan desde la función *main()*.
 Así la apariencia habitual de la función principal de cualquier programa debiera ser algo similar a:
-```
+``` .cpp
 int main(int argc, char* argv[]) {
   PrintProgramPurpose();
   if (!CheckCorrectParameters(argc, argv, 3)) {
