@@ -127,16 +127,29 @@ Para generar la documentación de su aplicación, colóquese en el directorio de
 ```
 doxygen Doxyfile
 ```
-Con el fichero `Doxyfile` que se suministra, la herramienta creará un subdirectorio `doc` en el directorio raíz de su proyecto en el que alojará toda la documentación generada.
-El directorio donde Doxygen genera su salida se especifica con la etiqueta `OUTPUT_DIRECTORY` (línea `61` del fichero `Doxyfile` suministrado).
+Con el fichero `Doxyfile` que se suministra, la herramienta creará un subdirectorio `doc` en el directorio 
+raíz de su proyecto en el que alojará toda la documentación generada.
+El directorio donde Doxygen genera su salida se especifica con la etiqueta `OUTPUT_DIRECTORY` 
+(línea `61` del fichero `Doxyfile` suministrado).
 Con la configuración suministrada se generan 2 subdirectorios dentro de `doc`: `html` y `latex`.
+Si se coloca en el directorio `doc/latex/` y ejecuta `make` el sistema "compila" el código LaTeX y 
+genera un fichero `refman.pdf` que contiene la documentación generada.
+Si trabaja en su máquina virtual, traiga el fichero `refman.pdf` hacia su máquina local y visualice su
+contenido.
+
 Si abre con un navegador el fichero `doc/html/index.html` accederá a la página principal de la documentación generada para el programa.
-Si se coloca en el directorio `doc/latex/` y ejecuta `make` el sistema "compila" el código LaTeX y genera un fichero `refman.pdf` que contiene igualmente la documentación generada.
+En su máquina virtual no va a poder abrir un navegador para explorar los ficheros del directorio `doc/html`.
+Lo que ha de hacer es o bien generarlos en su instalación Linux local o bien traer el contenido del directorio `doc` desde
+su máquina virtual IaaS hacia su máquina local y en la máquina local abrir con un navegador el fichero `doc/html/index.html`.
 
 Tal como se ha indicado, HTML o LaTeX son solo 2 de los formatos que permite generar Doxygen.
-Tanto HTML como LaTeX (también [Markdown](https://es.wikipedia.org/wiki/Markdown)) son lo que se conoce como [lenguajes de marcas](https://es.wikipedia.org/wiki/Lenguaje_de_marcado).
+Tanto HTML como LaTeX (también 
+[Markdown](https://es.wikipedia.org/wiki/Markdown)) 
+son lo que se conoce como 
+[lenguajes de marcas](https://es.wikipedia.org/wiki/Lenguaje_de_marcado).
 HTML es el lenguaje que se utiliza para componer los textos que se muestran en las páginas web.
-[Latex](https://en.wikipedia.org/wiki/LaTeX) es un sistema de composición de textos que cuida el formato en especial en el ámbito de la tipografía y que es especialmente adecuado para textos de carácter científico.
+[Latex](https://en.wikipedia.org/wiki/LaTeX) 
+es un sistema de composición de textos que cuida el formato en especial en el ámbito de la tipografía y que es especialmente adecuado para textos de carácter científico.
 No se pretende aquí que profundice en conocer HTML o LaTeX.
 
 La sección [Documenting the code](https://www.doxygen.nl/manual/config.html) del manual de Doxygen indica cómo comentar el código fuente de modo que los comentarios sean procesados por Doxygen para incorporarlos a la documentación generada.
