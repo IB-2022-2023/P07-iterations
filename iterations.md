@@ -1,6 +1,6 @@
 # Práctica 07. Iteraciones
 
-# Factor de ponderación: 6
+# Factor de ponderación: 7
 
 ### Objetivos
 Los objetivos de esta práctica son que el alumnado:
