@@ -1,4 +1,4 @@
-# Práctica 07. Iteraciones
+# Práctica 07. Iteraciones. Documentación de Código. Doxygen.
 
 # Factor de ponderación: 7
 
